@@ -1,0 +1,16 @@
+{
+  "name": "quickmin-api",
+  "version": "1.0.0",
+  "license": "MIT",
+  "exports": {
+    "./": {
+      "import": "./quickmin-api.js"
+    },
+    "./react": {
+      "import": "./quickmin-api-react.js"
+    }
+  },
+  "dependencies": {
+    "url-join": "^5.0.0"
+  }
+}
