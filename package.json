@@ -5,10 +5,10 @@
   "type": "module",
   "exports": {
     ".": {
-      "import": "./quickmin-api.js"
+      "import": "./src/quickmin-api.js"
     },
     "./react": {
-      "import": "./quickmin-api-react.js"
+      "import": "./src/quickmin-api-react.jsx"
     }
   },
   "dependencies": {

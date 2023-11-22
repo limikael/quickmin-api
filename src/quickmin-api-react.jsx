@@ -1,5 +1,5 @@
 import {createContext, useContext} from "react";
-import {QuickminApi} from "./api.js"
+import {QuickminApi} from "./quickmin-api.js"
 
 let QuickminApiContext=createContext();
 
