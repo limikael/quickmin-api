@@ -2,8 +2,9 @@
   "name": "quickmin-api",
   "version": "1.0.0",
   "license": "MIT",
+  "type": "module",
   "exports": {
-    "./": {
+    ".": {
       "import": "./quickmin-api.js"
     },
     "./react": {
