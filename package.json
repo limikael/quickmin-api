@@ -1,6 +1,7 @@
 {
   "name": "quickmin-api",
-  "version": "1.0.0",
+  "scripts": {},
+  "version": "1.0.1",
   "license": "MIT",
   "type": "module",
   "exports": {
