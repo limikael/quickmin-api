@@ -34,7 +34,10 @@ export class QuickminApi {
 	}
 
 	async findMany(table, query={}) {
-		//console.log("table: ",table," query: ",query);
+		/*console.log("table: ",table," query: ",query);
+
+		if (query.id && !query.id.length)
+			throw new Error("no query for you");*/
 
 		let url=urlJoin(this.url,table)+"?filter="+JSON.stringify(query);
 		let resultsResponse=await this.fetch(url,{
