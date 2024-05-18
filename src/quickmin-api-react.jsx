@@ -19,9 +19,14 @@ export function useQuickminApi() {
 }
 
 class QuickminUserState extends EventTarget {
-	constructor(initialUser) {
+	constructor(initialUser, quickminCookieName) {
 		super();
+
+		if (!quickminCookieName)
+			throw new Error("No quickmin cookie name provided!");
+
 		this.currentUser=initialUser;
+		this.quickminCookieName=quickminCookieName;
 	}
 
 	logout() {
@@ -33,8 +38,8 @@ class QuickminUserState extends EventTarget {
 
 let QuickminUserContext=createContext();
 
-export function QuickminUserProvider({initialUser, children}) {
-	let quickminUserState=useConstructor(()=>new QuickminUserState(initialUser));
+export function QuickminUserProvider({initialUser, quickminCookieName, children}) {
+	let quickminUserState=useConstructor(()=>new QuickminUserState(initialUser,quickminCookieName));
 
 	return (
 		<QuickminUserContext.Provider value={quickminUserState}>
