@@ -30,7 +30,8 @@ class QuickminUserState extends EventTarget {
 	}
 
 	logout() {
-		window.document.cookie="qmtoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+		// FIX HERE!!!!
+		window.document.cookie=this.quickminCookieName+"=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 		this.currentUser=null;
 		this.dispatchEvent(new Event("change"));
 	}
