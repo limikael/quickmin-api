@@ -118,6 +118,10 @@ export class QuickminApi {
         	body: formData,
 			headers: new Headers(this.headers)
         });
+
+        if (uploadResponse.status<200 || uploadResponse.status>=300)
+        	throw new Error(await uploadResponse.text());
+
         let uploadResult=await uploadResponse.json();
         return uploadResult.file;
 	}
