@@ -4,6 +4,16 @@ import {useConstructor, useEventUpdate} from "./react-util.jsx";
 
 let QuickminApiContext=createContext();
 
+export function QuickminProvider({fetch, url, initialUser, quickminCookieName, children}) {
+	return (
+		<QuickminApiProvider fetch={fetch} url={url}>
+			<QuickminUserProvider initialUser={initialUser} quickminCookieName={quickminCookieName}>
+				{children}
+			</QuickminUserProvider>
+		</QuickminApiProvider>
+	)
+}
+
 export function QuickminApiProvider({fetch, url, apiKey, headers, children}) {
 	let api=new QuickminApi({fetch, url, apiKey, headers});
 
